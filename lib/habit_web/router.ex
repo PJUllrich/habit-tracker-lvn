@@ -22,7 +22,8 @@ defmodule HabitWeb.Router do
   scope "/", HabitWeb do
     pipe_through :browser
 
-    live "/", HomeLive
+    live "/", CalendarLive
+    live "/habits", HabitsLive
   end
 
   # Other scopes may use custom stacks.

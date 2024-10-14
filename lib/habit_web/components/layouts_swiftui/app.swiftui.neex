@@ -1,2 +1,24 @@
 <.flash_group flash={@flash} />
-<%= @inner_content %>
+
+<TabView selection={assigns[:tab] || "calendar"} phx-change="tab-changed">
+    <VStack tag="calendar" style="tabItem(:item)">
+        <Label
+        template="item"
+        systemImage="calendar"
+        >
+        Calendar
+        </Label>
+
+        <%= @inner_content %>
+    </VStack>
+<VStack tag="habits" style="tabItem(:item)">
+    <Label
+    template="item"
+    systemImage="figure.run.square.stack"
+    >
+    Habits
+    </Label>
+
+    <%= @inner_content %>
+</VStack>
+</TabView>
